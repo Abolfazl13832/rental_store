@@ -1,0 +1,6 @@
+<h1>Hi {{ request.user.username }}</h1>
+
+<h2>tools list</h2>
+{% for tool in tools %}
+    <a href="{% url 'tool_detail' tool.pk %}">{{ tool.name }}</a><br>
+{% endfor %}

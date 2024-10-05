@@ -1,0 +1,9 @@
+<h1>{{tool.name}}</h1><br>
+<h2>price:{{tool.price_per_day}}</h2>
+<form method="post" action="{% url 'add-to-basket' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="hidden" name="next" value="{{request.build_absolute_uri}}">
+    <button type="submit">اضافه کردن به سبدخرید</button>
+</form>
+
